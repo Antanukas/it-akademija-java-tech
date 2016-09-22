@@ -23,7 +23,7 @@ var ProductDetailsContainer = React.createClass({
   },
 
   handleBack: function() {
-    console.log('back');
+    this.context.router.push('/home');
   },
 
   render: function() {
@@ -36,5 +36,9 @@ var ProductDetailsContainer = React.createClass({
     );
   }
 });
+
+ProductDetailsContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+};
 
 window.ProductDetailsContainer = ProductDetailsContainer;

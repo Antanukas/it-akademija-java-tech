@@ -22,7 +22,8 @@ NavLink.propTypes = {
 };
 
 var CartSummaryContainer = window.CartSummaryContainer;
-console.log(CartSummaryContainer);
+var UsernameComponent = window.UsernameComponent;
+
 var NavigationComponent = React.createClass({
   render: function() {
     return (
@@ -32,6 +33,9 @@ var NavigationComponent = React.createClass({
             <NavLink to="/home" onlyActiveOnIndex>Home</NavLink>
             <NavLink to="/admin">Admin</NavLink>
           </ul>
+          <form className="navbar-form navbar-left">
+            <UsernameComponent />
+          </form>
           <ul className="nav navbar-nav navbar-right">
             <NavLink to="/cart-details"> <CartSummaryContainer /></NavLink>
           </ul>

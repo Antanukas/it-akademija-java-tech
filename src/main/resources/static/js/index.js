@@ -18,7 +18,7 @@ var Admin = React.createClass({
 });
 var NoMatch = React.createClass({
   render: function() {
-    return <div>NoMatch haha</div>;
+    return <div>Route did not match</div>;
   }
 });
 

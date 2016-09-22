@@ -21,8 +21,8 @@ NavLink.propTypes = {
   to: React.PropTypes.string.isRequired,
 };
 
-var CartSummaryComponent = window.CartSummaryComponent;
-
+var CartSummaryContainer = window.CartSummaryContainer;
+console.log(CartSummaryContainer);
 var NavigationComponent = React.createClass({
   render: function() {
     return (
@@ -33,7 +33,7 @@ var NavigationComponent = React.createClass({
             <NavLink to="/admin">Admin</NavLink>
           </ul>
           <ul className="nav navbar-nav navbar-right">
-            <NavLink to="/cart-details"> <CartSummaryComponent /></NavLink>
+            <NavLink to="/cart-details"> <CartSummaryContainer /></NavLink>
           </ul>
         </div>
       </nav>

@@ -33,7 +33,7 @@ var HomePage = window.HomePage;
 var ProductListAdministrationPage = window.ProductListAdministrationPage;
 var ProductAdministrationPage = window.ProductAdministrationPage;
 var CartDetailsPage = window.CartDetailsPage;
-var ProductDetailsComponent = window.ProductDetailsComponent;
+var ProductDetailsContainer = window.ProductDetailsContainer;
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -41,7 +41,7 @@ ReactDOM.render((
       <IndexRoute component={HomePage} />
       <Route path="/home" component={HomePage} />
       <Route path="/cart-details" component={CartDetailsPage} />
-      <Route path="/products/:id" component={ProductDetailsComponent} />
+      <Route path="/products/:id" component={ProductDetailsContainer} />
       <Route path="/admin" component={Admin}>
         <IndexRoute component={ProductListAdministrationPage} />
         <Route path="/admin/products" component={ProductListAdministrationPage} />

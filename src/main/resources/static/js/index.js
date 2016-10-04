@@ -41,11 +41,11 @@ ReactDOM.render((
       <IndexRoute component={HomePage} />
       <Route path="/home" component={HomePage} />
       <Route path="/cart-details" component={CartDetailsPage} />
-      <Route path="/products/:id" component={ProductDetailsContainer} />
+      <Route path="/products/:productId" component={ProductDetailsContainer} />
       <Route path="/admin" component={Admin}>
         <IndexRoute component={ProductListAdministrationContainer} />
         <Route path="/admin/products" component={ProductListAdministrationContainer} />
-        <Route path="/admin/products/:id" component={ProductAdministrationContainer} />
+        <Route path="/admin/products/:productId" component={ProductAdministrationContainer} />
       </Route>
       <Route path="*" component={NoMatch}/>
     </Route>

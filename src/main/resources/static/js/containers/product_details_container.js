@@ -1,5 +1,6 @@
 var ProductDetailsComponent = window.ProductDetailsComponent;
 var EventEmitter = window.EventEmitter;
+var UserService = window.UserService;
 
 var ProductDetailsContainer = React.createClass({
 
@@ -23,7 +24,14 @@ var ProductDetailsContainer = React.createClass({
   },
 
   handleAddToCart: function() {
-    EventEmitter.publish({ eventType: 'AddToCart' });
+    var body = {
+      id: this.state.product.id,
+      image: this.state.product.image,
+      title: this.state.product.title
+    };
+    axios.post('/api/users/' + UserService.getUsername() + '/cart-products', body).then(function() {
+      EventEmitter.publish({ eventType: 'AddToCart' });
+    });
   },
 
   handleBack: function() {

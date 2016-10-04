@@ -1,6 +1,7 @@
 
 var CartSummaryComponent = window.CartSummaryComponent;
 var EventEmitter = window.EventEmitter;
+var UserService = window.UserService;
 
 var CartSummaryContainer = React.createClass({
 
@@ -11,18 +12,26 @@ var CartSummaryContainer = React.createClass({
   },
 
   componentDidMount: function() {
-    EventEmitter.subscribe(this, this.onAddToCartEvent, 'AddToCart');
+    this.getAndUpdateCartItems();
+    EventEmitter.subscribe(this, this.onCartEvent, 'AddToCart');
+    EventEmitter.subscribe(this, this.onCartEvent, 'RemoveFromCart');
   },
 
   componentWillUnmount: function() {
     EventEmitter.unsubscribe(this);
   },
 
-  onAddToCartEvent: function() {
-    this.setState({
-      itemCount: this.state.itemCount + 1
+  onCartEvent: function() {
+    this.getAndUpdateCartItems();
+  },
+
+  getAndUpdateCartItems: function() {
+    var self = this;
+    axios.get('/api/users/' + UserService.getUsername() + '/cart-products').then(function (response) {
+      self.setState({
+        itemCount: response.data.length
+      });
     });
-    console.log('cart event');
   },
 
   render: function() {
@@ -30,5 +39,4 @@ var CartSummaryContainer = React.createClass({
   }
 });
 
-console.log(CartSummaryContainer);
 window.CartSummaryContainer = CartSummaryContainer;

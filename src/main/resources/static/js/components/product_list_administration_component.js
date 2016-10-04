@@ -16,6 +16,7 @@ var ProductListAdministrationComponent = React.createClass({
     });
     return (
       <div>
+        <Link className="btn btn-success" to="/admin/products/new">Add new product</Link>
         <table className="table">
           <thead>
             <tr>

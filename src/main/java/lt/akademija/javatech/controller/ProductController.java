@@ -1,13 +1,11 @@
 package lt.akademija.javatech.controller;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 import lt.akademija.javatech.model.NewProduct;
 import lt.akademija.javatech.model.Product;
+import lt.akademija.javatech.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,39 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductController {
 
-    private final List<Product> products;
-    private final AtomicLong idGenerator = new AtomicLong(0);
-
-    public ProductController() {
-        products = Collections.synchronizedList(new ArrayList<>());
-
-        Product p1 = new Product();
-        p1.id = idGenerator.incrementAndGet();
-        p1.title = "Smasungiok";
-        p1.image = "/samsung.jpg";
-        p1.description = "Desc";
-        p1.price = new BigDecimal("20.6");
-        p1.quantity = 48L;
-        products.add(p1);
-
-        Product p2 = new Product();
-        p2.id = idGenerator.incrementAndGet();
-        p2.title = "Smasungiok2";
-        p2.image = "/samsung.jpg";
-        p2.description = "Desc";
-        p2.price = new BigDecimal("14.6");
-        p2.quantity = 25L;
-        products.add(p2);
-    }
+    @Autowired
+    private ProductRepository repository;
 
     @GetMapping("/api/products")
     public List<Product> getProducts() {
-        return products;
+        return repository.getProducts();
     }
 
     @GetMapping("/api/products/{productId}")
     public Product getProduct(@PathVariable Long productId) {
-        return products.stream()
+        return repository.getProducts().stream()
                        .filter(p -> p.id.equals(productId))
                        .findFirst()
                        .orElseThrow(() -> new RuntimeException("Can't find product"));
@@ -58,15 +34,7 @@ public class ProductController {
 
     @PostMapping("/api/products")
     public Product createProduct(@RequestBody NewProduct p) {
-        Product pr = new Product();
-        pr.id = idGenerator.incrementAndGet();
-        pr.price = p.price;
-        pr.image = p.image;
-        pr.title = p.title;
-        pr.description = p.description;
-        pr.quantity = p.quantity;
-        products.add(pr);
-        return pr;
+        return repository.addProduct(p);
     }
 
     @PutMapping("/api/products/{productId}")

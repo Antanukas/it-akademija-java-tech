@@ -6,17 +6,21 @@ var ProductDetailsContainer = React.createClass({
   getInitialState: function() {
     return {
       product: {
-        id: 1,
-        image: '/samsung.jpg',
-        title: 'Random',
-        description: 'desc',
-        price: 2.5,
-        isInStock: true
+        image: '',
+        title: '',
+        description: '',
+        price: 0,
+        quantity: 0,
       }
     };
   },
 
-
+  componentDidMount: function() {
+    var self = this;
+    axios.get('/api/products/' + 1).then(function (response) {
+      self.setState({ product: response.data });
+    });
+  },
 
   handleAddToCart: function() {
     EventEmitter.publish({ eventType: 'AddToCart' });

@@ -3,36 +3,15 @@ var ProductListAdministrationComponent = window.ProductListAdministrationCompone
 var ProductListAdministrationContainer = React.createClass({
 
   getInitialState: function() {
-    return {
-      products: [
-        {
-          id: 1,
-          image: '/samsung.jpg',
-          title: 'Random',
-          description: 'desc',
-          price: 2.5,
-          isInStock: true
-        },
-        {
-          id: 1,
-          image: '/samsung.jpg',
-          title: 'Random',
-          description: 'desc',
-          price: 2.5,
-          isInStock: true
-        },
-        {
-          id: 1,
-          image: '/samsung.jpg',
-          title: 'Random',
-          description: 'desc',
-          price: 2.5,
-          isInStock: true
-        }
-      ]
-    };
+    return { products: [] };
   },
 
+  componentDidMount: function() {
+    var self = this;
+    axios.get('/api/products').then(function (response) {
+      self.setState({ products: response.data });
+    });
+  },
 
   render: function() {
     return (

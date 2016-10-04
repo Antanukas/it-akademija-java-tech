@@ -27,7 +27,7 @@ ProductDetailsComponent.propTypes = {
     title: React.PropTypes.string.isRequired,
     description: React.PropTypes.string.isRequired,
     price: React.PropTypes.number.isRequired,
-    isInStock: React.PropTypes.bool.isRequired,
+    quantity: React.PropTypes.number.isRequired,
   }).isRequired,
   onAddToCart: React.PropTypes.func.isRequired,
   onBack: React.PropTypes.func.isRequired,

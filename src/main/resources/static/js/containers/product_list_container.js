@@ -14,6 +14,13 @@ var ProductListContainer = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    var self = this;
+    axios.get('/api/products').then(function (response) {
+      self.setState({ products: response.data });
+    });
+  },
+  
   handleDetailsClick: function(productId) {
     var self = this;
     return function() {

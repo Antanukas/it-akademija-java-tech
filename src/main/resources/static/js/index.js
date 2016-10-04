@@ -30,8 +30,8 @@ var IndexRoute = window.ReactRouter.IndexRoute;
 var hashHistory = window.ReactRouter.hashHistory;
 
 var HomePage = window.HomePage;
-var ProductListAdministrationPage = window.ProductListAdministrationPage;
-var ProductAdministrationPage = window.ProductAdministrationPage;
+var ProductAdministrationContainer = window.ProductAdministrationContainer;
+var ProductListAdministrationContainer = window.ProductListAdministrationContainer;
 var CartDetailsPage = window.CartDetailsPage;
 var ProductDetailsContainer = window.ProductDetailsContainer;
 
@@ -43,9 +43,9 @@ ReactDOM.render((
       <Route path="/cart-details" component={CartDetailsPage} />
       <Route path="/products/:id" component={ProductDetailsContainer} />
       <Route path="/admin" component={Admin}>
-        <IndexRoute component={ProductListAdministrationPage} />
-        <Route path="/admin/products" component={ProductListAdministrationPage} />
-        <Route path="/admin/products/:id" component={ProductAdministrationPage} />
+        <IndexRoute component={ProductListAdministrationContainer} />
+        <Route path="/admin/products" component={ProductListAdministrationContainer} />
+        <Route path="/admin/products/:id" component={ProductAdministrationContainer} />
       </Route>
       <Route path="*" component={NoMatch}/>
     </Route>

@@ -1,6 +1,8 @@
+var CartDetailsContainer = window.CartDetailsContainer;
+
 var CartDetailsPage = React.createClass({
   render: function() {
-    return <div>Cart details page</div>;
+    return <div><CartDetailsContainer /></div>;
   }
 });
 

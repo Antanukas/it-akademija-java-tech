@@ -29,18 +29,18 @@ var Route = window.ReactRouter.Route;
 var IndexRoute = window.ReactRouter.IndexRoute;
 var hashHistory = window.ReactRouter.hashHistory;
 
-var HomePage = window.HomePage;
+var ProductListContainer = window.ProductListContainer;
 var ProductAdministrationContainer = window.ProductAdministrationContainer;
 var ProductListAdministrationContainer = window.ProductListAdministrationContainer;
-var CartDetailsPage = window.CartDetailsPage;
+var CartDetailsContainer = window.CartDetailsContainer;
 var ProductDetailsContainer = window.ProductDetailsContainer;
 
 ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={HomePage} />
-      <Route path="/home" component={HomePage} />
-      <Route path="/cart-details" component={CartDetailsPage} />
+      <IndexRoute component={ProductListContainer} />
+      <Route path="/cart-details" component={CartDetailsContainer} />
+      <Route path="/products" component={ProductListContainer} />
       <Route path="/products/:productId" component={ProductDetailsContainer} />
       <Route path="/admin" component={Admin}>
         <IndexRoute component={ProductListAdministrationContainer} />

@@ -21,7 +21,7 @@ public class ProductRepository {
 
         Product p1 = new Product();
         p1.id = idGenerator.incrementAndGet();
-        p1.title = "Smasungiok";
+        p1.title = "Samsung Phone 1";
         p1.image = "/samsung.jpg";
         p1.description = "Desc";
         p1.price = new BigDecimal("20.6");
@@ -30,7 +30,43 @@ public class ProductRepository {
 
         Product p2 = new Product();
         p2.id = idGenerator.incrementAndGet();
-        p2.title = "Smasungiok2";
+        p2.title = "Samsung Phone 2";
+        p2.image = "/samsung.jpg";
+        p2.description = "Desc";
+        p2.price = new BigDecimal("14.6");
+        p2.quantity = 25L;
+        products.add(p2);
+
+        p2 = new Product();
+        p2.id = idGenerator.incrementAndGet();
+        p2.title = "Samsung Phone 3";
+        p2.image = "/samsung.jpg";
+        p2.description = "Desc";
+        p2.price = new BigDecimal("14.6");
+        p2.quantity = 25L;
+        products.add(p2);
+
+        p2 = new Product();
+        p2.id = idGenerator.incrementAndGet();
+        p2.title = "Samsung Phone 4";
+        p2.image = "/samsung.jpg";
+        p2.description = "Desc";
+        p2.price = new BigDecimal("14.6");
+        p2.quantity = 25L;
+        products.add(p2);
+
+        p2 = new Product();
+        p2.id = idGenerator.incrementAndGet();
+        p2.title = "Samsung Phone 5";
+        p2.image = "/samsung.jpg";
+        p2.description = "Desc";
+        p2.price = new BigDecimal("14.6");
+        p2.quantity = 25L;
+        products.add(p2);
+
+        p2 = new Product();
+        p2.id = idGenerator.incrementAndGet();
+        p2.title = "Samsung Phone 6";
         p2.image = "/samsung.jpg";
         p2.description = "Desc";
         p2.price = new BigDecimal("14.6");

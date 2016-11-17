@@ -30,7 +30,7 @@ var NavigationComponent = React.createClass({
       <nav className="navbar navbar-default">
         <div className="container-fluid">
           <ul className="nav navbar-nav">
-            <NavLink to="/home" onlyActiveOnIndex>Home</NavLink>
+            <NavLink to="/products" onlyActiveOnIndex>Home</NavLink>
             <NavLink to="/admin">Admin</NavLink>
           </ul>
           <form className="navbar-form navbar-left">

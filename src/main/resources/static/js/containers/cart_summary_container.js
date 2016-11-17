@@ -27,11 +27,13 @@ var CartSummaryContainer = React.createClass({
 
   getAndUpdateCartItems: function() {
     var self = this;
-    axios.get('/api/users/' + UserService.getUsername() + '/cart-products').then(function (response) {
-      self.setState({
-        itemCount: response.data.length
+    if (UserService.getUsername()) {
+      axios.get('/api/users/' + UserService.getUsername() + '/cart-products').then(function (response) {
+        self.setState({
+          itemCount: response.data.length
+        });
       });
-    });
+    }
   },
 
   render: function() {

@@ -6,7 +6,7 @@ var UserService = function() {
   };
 
   this.getUsername = function() {
-    return localStorage.getItem('username');
+    return localStorage.getItem('username') || '';
   };
 };
 

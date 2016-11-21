@@ -2,15 +2,7 @@ var ProductListContainer = React.createClass({
 
   getInitialState: function() {
     return {
-      products: [
-        {
-          id: 1,
-          image: '/samsung.jpg',
-          title: 'Random',
-          description: 'desc',
-          price: 2.5,
-        }
-      ]
+      products: []
     };
   },
 
@@ -20,9 +12,10 @@ var ProductListContainer = React.createClass({
       self.setState({ products: response.data });
     });
   },
-  
+
   handleDetailsClick: function(productId) {
     var self = this;
+    //Return new function here because product_card_component assigns handler using onDetailsClick(productId)
     return function() {
       self.context.router.push('/products/' + productId);
     };

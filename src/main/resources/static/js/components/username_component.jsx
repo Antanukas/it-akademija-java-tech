@@ -1,5 +1,3 @@
-var UserService = window.UserService;
-
 var UsernameComponent = React.createClass({
   getInitialState: function() {
     return { username: '' };
@@ -8,7 +6,7 @@ var UsernameComponent = React.createClass({
   componentDidMount: function() {
     this.setState({ username: UserService.getUsername() });
   },
-  
+
   handleUsernameChange: function(e) {
     var username = e.target.value;
     this.setState({ username: username });

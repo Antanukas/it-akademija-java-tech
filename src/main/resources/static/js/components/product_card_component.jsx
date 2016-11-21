@@ -1,4 +1,4 @@
-var PropTypes = window.React.PropTypes;
+var PropTypes = React.PropTypes;
 
 var styles = {
   thumbnail: {

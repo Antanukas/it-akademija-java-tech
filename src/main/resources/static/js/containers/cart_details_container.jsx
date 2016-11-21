@@ -1,22 +1,10 @@
-
-var CartDetailsComponent = window.CartDetailsComponent;
-
 var UserService = window.UserService;
 var EventEmitter = window.EventEmitter;
 var CartDetailsContainer = React.createClass({
 
   getInitialState: function() {
     return {
-      items: [
-        {
-          id: 1,
-          image: '/samsung.jpg',
-          title: 'Random',
-          description: 'desc',
-          price: 2.5,
-          isInStock: true
-        }
-      ]
+      items: []
     };
   },
 

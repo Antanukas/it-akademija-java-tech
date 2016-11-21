@@ -1,5 +1,3 @@
-var NavigationComponent = window.NavigationComponent;
-
 var App = React.createClass({
   render: function() {
     return (
@@ -24,16 +22,10 @@ var NoMatch = React.createClass({
 
 
 
-var Router = window.ReactRouter.Router;
-var Route = window.ReactRouter.Route;
-var IndexRoute = window.ReactRouter.IndexRoute;
-var hashHistory = window.ReactRouter.hashHistory;
-
-var ProductListContainer = window.ProductListContainer;
-var ProductAdministrationContainer = window.ProductAdministrationContainer;
-var ProductListAdministrationContainer = window.ProductListAdministrationContainer;
-var CartDetailsContainer = window.CartDetailsContainer;
-var ProductDetailsContainer = window.ProductDetailsContainer;
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
+var hashHistory = ReactRouter.hashHistory;
 
 ReactDOM.render((
   <Router history={hashHistory}>

@@ -1,5 +1,3 @@
-
-var CartSummaryComponent = window.CartSummaryComponent;
 var EventEmitter = window.EventEmitter;
 var UserService = window.UserService;
 

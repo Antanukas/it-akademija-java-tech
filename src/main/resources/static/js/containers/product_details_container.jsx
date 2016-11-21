@@ -1,4 +1,3 @@
-var ProductDetailsComponent = window.ProductDetailsComponent;
 var EventEmitter = window.EventEmitter;
 var UserService = window.UserService;
 
@@ -18,7 +17,7 @@ var ProductDetailsContainer = React.createClass({
 
   componentDidMount: function() {
     var self = this;
-    axios.get('/api/products/' + 1).then(function (response) {
+    axios.get('/api/products/' + this.props.params.productId).then(function (response) {
       self.setState({ product: response.data });
     });
   },
@@ -35,7 +34,7 @@ var ProductDetailsContainer = React.createClass({
   },
 
   handleBack: function() {
-    this.context.router.push('/home');
+    this.context.router.push('/products');
   },
 
   render: function() {

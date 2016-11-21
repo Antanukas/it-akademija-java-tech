@@ -1,5 +1,4 @@
-var Router = window.ReactRouter;
-var Link = Router.Link;
+var Link = ReactRouter.Link;
 
 var ProductAdministrationComponent = React.createClass({
 

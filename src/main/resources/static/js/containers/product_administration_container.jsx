@@ -1,5 +1,3 @@
-var ProductAdministrationComponent = window.ProductAdministrationComponent;
-
 var ProductAdministrationContainer = React.createClass({
 
   getInitialState: function() {

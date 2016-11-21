@@ -1,7 +1,3 @@
-
-var React = window.React;
-var ProductCardComponent = window.ProductCardComponent;
-
 var ProductListComponent = function(props) {
   var productCards = props.products.map(function (product, index) {
     return (
